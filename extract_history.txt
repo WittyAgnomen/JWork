@@ -1,0 +1,20 @@
+history
+import graphlab as gl
+path2pic='medium/one/'
+sa=gl.image_analysis.load_images(path2pic, "auto", with_path=True)
+sa.head(5)
+len(sa)
+extractor = gl.feature_engineering.DeepFeatureExtractor(features = 'image',model='auto')
+extractor = extractor.fit(sa)
+extracted_model = extractor['model']
+features_sf = extractor.transform(sa)
+features_sf
+len(features_sf['deep_features.image'][1])
+ls
+import pickle
+features_sf.to_dataframe('feats')
+features_sf.to_dataframe
+features_sf
+features_sf.to_pickle('feats')
+features_sf.save('feats')
+history
